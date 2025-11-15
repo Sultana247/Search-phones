@@ -38,7 +38,7 @@ const displayPhones =(phones, isShowAll)=>{
                     <h2 class="card-title">${phone.phone_name}</h2>
                     <p>There are many variations of passages of available, but the majority have suffered</p>
                     <div class="card-actions ">
-                    <button class="btn btn-primary" onclick="my_modal_1.showModal(); showDetails('${phone.slug}')">Buy Now</button>
+                    <button class="btn btn-primary" onclick="my_modal_1.showModal(); showDetails('${phone.slug}')">Show Details</button>
                     
                     </div>
                 </div>
