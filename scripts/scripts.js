@@ -44,8 +44,9 @@ const displayPhones =(phones, isShowAll)=>{
         
         `;
         phoneContainer.appendChild(phoneCard);
+        toggleLodingSpinner(false);
     });
-
+    
 }
 
 
@@ -53,8 +54,19 @@ const searchPhones = (isShowAll)=> {
     const searchPhones = document.getElementById('searchPhones');
     const searchPhonesText = searchPhones.value;
     loadPhones(searchPhonesText, isShowAll);
+    toggleLodingSpinner(true);
 }
 
 const showAll = ()=>{
     searchPhones(true);
+}
+
+const toggleLodingSpinner = (isLoading)=>{
+    const toggleLodingSpinner = document.getElementById('toggleLodingSpinner');
+    if(isLoading){
+        toggleLodingSpinner.classList.remove('hidden');
+    }
+    else{
+        toggleLodingSpinner.classList.add('hidden');
+    }
 }

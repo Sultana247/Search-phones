@@ -33,9 +33,13 @@
     <main>
         <h2 class="text-4xl font-bold text-center">Search your phone</h2>
         <!-- search section -->
-         <div class="mt-6 mb-12 flex justify-center">
+         <div class="flex flex-col justify-center items-center">
+            <div class="mt-6 mb-12 flex justify-center">
             <input id="searchPhones" type="text" placeholder="Type here" class="input bg-[#100F0F0D]" />
             <button onclick="searchPhones()" class="btn btn-primary text-lg font-medium">Search</button>
+            
+         </div>
+            <span id="toggleLodingSpinner" class="hidden loading loading-spinner loading-lg my-12"></span>
          </div>
 
 
@@ -45,7 +49,7 @@
              
           </div>
             <!-- show all part -->
-          <div id="showallContainer" class="hidden">
+          <div id="showallContainer" class="hidden flex flex-col justify-center items-center my-12">
             <button onclick="showAll()" class="btn bg-white text-blue-500">Show all</button>
           </div>
 
