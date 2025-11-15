@@ -38,7 +38,8 @@ const displayPhones =(phones, isShowAll)=>{
                     <h2 class="card-title">${phone.phone_name}</h2>
                     <p>There are many variations of passages of available, but the majority have suffered</p>
                     <div class="card-actions ">
-                    <button class="btn btn-primary">Buy Now</button>
+                    <button class="btn btn-primary" onclick="my_modal_1.showModal(); showDetails('${phone.slug}')">Buy Now</button>
+                    
                     </div>
                 </div>
         
@@ -49,6 +50,36 @@ const displayPhones =(phones, isShowAll)=>{
     
 }
 
+// show details of phones
+const showDetails = async(id)=>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
+    const data = await res.json();
+    const phone=data.data;
+    console.log(phone);
+
+    // show the image of phone
+    const phoneDetailsContainer = document.getElementById('phoneDetailsContainer');
+    phoneDetailsContainer.innerHTML=`
+         <img
+            src="${phone.image}"
+            alt="Shoes" 
+            class="size-56 flex "/>
+        <h3>${phone.name}</h3>
+        <p class=""><span class="font-bold text-lg">Storage: </span>${phone.mainFeatures.storage}</p>
+        <p class=""><span class="font-bold text-lg">Display Size: </span>${phone?.mainFeatures?.displaySize}</p>
+        <p class=""><span class="font-bold text-lg">Chipset: </span>${phone?.mainFeatures?.chipSet}</p>
+        <p class=""><span class="font-bold text-lg">Memory: </span>${phone?.mainFeatures?.memory}</p>
+        <p class=""><span class="font-bold text-lg">Slug: </span>${phone?.slug}</p>
+        <p class=""><span class="font-bold text-lg">Release date: </span>${phone?.releaseDate}</p>
+        <p class=""><span class="font-bold text-lg">Brand: </span>${phone?.brand}</p>
+        <p class=""><span class="font-bold text-lg">GPS: </span>${phone?.others?.GPS || 'No GPS'}</p>
+
+
+
+    
+    `;
+
+}
 
 const searchPhones = (isShowAll)=> {
     const searchPhones = document.getElementById('searchPhones');
