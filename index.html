@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy phone</title>
+    <!-- daisyui and tailwind css -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="container mx-auto">
+    <header>
+        <!-- navbar -->
+         <div class="navbar bg-base-100 container mx-auto">
+            <div class="navbar-start">
+                <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                </div>
+               
+                </div>
+                <a class=" text-xl">Hot Gadgets</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                
+
+            </div>
+            <div class="navbar-end">
+                <a class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h2 class="text-4xl font-bold text-center">Search your phone</h2>
+        <!-- search section -->
+         <div class="mt-6 mb-12 flex justify-center">
+            <input id="searchPhones" type="text" placeholder="Type here" class="input bg-[#100F0F0D]" />
+            <button onclick="searchPhones()" class="btn btn-primary text-lg font-medium">Search</button>
+         </div>
+
+
+         <!-- phone card -->
+        <div id="phone-container" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- show all part -->
+             
+          </div>
+            <!-- show all part -->
+          <div id="showallContainer" class="hidden">
+            <button onclick="showAll()" class="btn bg-white text-blue-500">Show all</button>
+          </div>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
